@@ -87,6 +87,84 @@ npm install -D sass
 
 - Bundling and Minifying: Webpack Build pack
 
+npx webpack
+
+"scripts": {
+
+  "test": "echo \"Error: no test specified\" && exit 1",
+
+  "build":"webpack"
+
+------
+
+"scripts": {
+
+  "test": "echo \"Error: no test specified\" && exit 1",
+
+  "build":"webpack",
+
+  "start": "node dist/app.js"
+
+----
+
+final version:
+
+"scripts": {
+
+  "test": "echo \"Error: no test specified\" && exit 1",
+
+  "build":"webpack",
+
+  "start": "node dist/app.js",
+
+  "prestart": "echo prestart scrip is running ... && npm run build"
+
+ },
+
+- Front-end Frameworks: Angular Build Tasks
+
+ng new
+
+create a file ./server/server.js
+
+In angular.json
+
+"outputPath": "dist",
+
+run npm run build
+
+change as follow:
+
+"start": "node server/server.js",
+
+  "start-ng": "ng serve"
+
+npm start
+
+- Front-end Frameworks: Automating Angular Build Tasks
+
+
+
+"scripts": {
+
+  "ng": "ng",
+
+  "start": "node server/server.js",
+
+  "prestart": "npm run build",
+
+  "start-ng": "ng serve",
+
+- Containers: Docker Build Taks
+
+...
+
+
+
+- Containers: Automating Docker Build Taks
+
+
+
 
 
 
