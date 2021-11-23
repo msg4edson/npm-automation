@@ -307,9 +307,98 @@ npm install npm-run-all --save-dev
 
 https://www.npmjs.com/package/browser-sync
 
+npm i -D browser-sync
+
+- Automating CSS Pre-processor tasks
+- Docker Development Tasks
+
+"scripts": {
+
+  "docker:stop":"docker container stop webapp",
+
+  "docker:remove":"docker container rm webapp",
+
+  "docker:build":"docker build -t msgedsonio/node-web-app .",
+
+  "docker:run":"docker run -p 4005:4005 -d --name webapp msgedsonio/node-web-app",
+
+  "test": "echo \"Error: no test specified\" && exit 1"
+
+ },
+
+- Automating Docker Development Tasks
+
+"scripts": {
+
+  "docker:stop":"docker container stop webapp",
+
+  "docker:remove":"docker container rm webapp",
+
+  "docker:build":"docker build -t msgedsonio/node-web-app .",
+
+  "docker:run":"docker run -p 4005:4005 -d --name webapp msgedsonio/node-web-app",
+
+  "docker:run:dev":"docker run -p 4005:4005 -d -v /f/05-STUDY/6-Node/npm-automation/4-scripting-for-developing/node-docker:/usr/src/app --name webapp msgedsonio/node-web-app",
+
+  "test": "echo \"Error: no test specified\" && exit 1"
+
+ },
 
 
 
+in Dockerfile:
+
+FROM node:12
+
+
+
+*# Create app directory*
+
+WORKDIR /usr/src/app
+
+
+
+*# Install app dependencies*
+
+*# A wildcard is use to ensure both packege.json AND packege-lock.json are*
+
+COPY package*.json ./
+
+
+
+RUN npm install
+
+
+
+RUN npm install -g nodemon
+
+
+
+*# Bundle app source*
+
+COPY . .
+
+
+
+EXPOSE 4005
+
+CMD ["nodemon", "-L", "server.js"]
+
+
+
+npm run docker:build
+
+npm run docker:run:dev
+
+
+
+- Automating Node.js Debugging
+
+"start:debug":"nodemon --inspect index.js",
+
+or
+
+"start:debug":"nodemon --inspect-brk index.js",
 
 **5-Scripting for Testing**
 
