@@ -277,6 +277,36 @@ https://www.npmjs.com/package/ts-node-dev
 
 npm run start:tsdev
 
+- Webpack Development Tasks
+
+"build:dev":"webpack --watch",
+
+npm i -D nodemon
+
+"star:dev":"nodemon dist/app.js",
+
+npm install npm-run-all --save-dev
+
+"scripts": {
+
+  "test": "echo \"Error: no test specified\" && exit 1",
+
+  "build": "webpack",
+
+  "build:dev": "webpack --watch",
+
+  "start": "npm-run-all build --parallel start:dev build:watch",
+
+  "star:dev":"nodemon dist/app.js",
+
+  "prestart": "echo prestart scrip is running ... && npm run build"
+
+ },
+
+- Automating Webpack Development Tasks
+
+https://www.npmjs.com/package/browser-sync
+
 
 
 

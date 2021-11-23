@@ -9,7 +9,7 @@
   "scripts": {
     "tsc": "tsc",
     "prestart": "echo The prestart script is running && npm run tsc",
-    "start:tsdev":"ts-node-dev index.ts",
+    "start:tsdev": "ts-node-dev index.ts",
     "start": "node index.js",
     "build:watch": "npm run tsc -- --watch",
     "start:dev": "nodemon index.js",
