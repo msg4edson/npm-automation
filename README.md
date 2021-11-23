@@ -199,9 +199,21 @@ CMD ["node", "server.js"]
 
 
 
+docker build -t msgedsonio/node-web-app .
+
+docker image ls
+
+docker run -p 4005:4005 -d --name webapp msgedsonio/node-web-app
+
+
+
 - Containers: Automating Docker Build Taks
 
+ "scripts": {
 
+  "docker:build":"docker build -t msgedsonio/node-web-app .",
+
+  "docker:run":"docker run -p 4005:4005 -d --name webapp msgedsonio/node-web-app",
 
 
 
