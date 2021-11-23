@@ -402,7 +402,39 @@ or
 
 **5-Scripting for Testing**
 
+- Running Tests
 
+create a folder ./teste/test.spec.js
+
+npm i -D mocha
+
+npm i -D chai
+
+npm i -D chai-http
+
+npm i -D nyc
+
+in package.json add
+
+"test": "mocha"
+
+
+
+- Watching for changes
+
+"test:watch": "mocha --watch"
+
+- Creating Coverage Reports
+
+https://www.npmjs.com/package/nyc
+
+"test:coverage": "nyc --reporter=html mocha"
+
+- Opening Coverage Reports with a Post Script
+
+  npm install -D open-cli
+
+"posttest:coverage": "open-cli ./coverage/index.html"
 
 **6-Scripting for Deploying**
 
