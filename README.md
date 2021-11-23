@@ -221,6 +221,64 @@ docker run -p 4005:4005 -d --name webapp msgedsonio/node-web-app
 
 **4-Scripting for Developing**
 
+- Automating Node.js Development Tasks
+
+  https://www.npmjs.com/package/nodemon
+
+  npm install --save-dev nodemon
+
+   "scripts": {
+
+    "start": "node index.js",
+
+    "start:dev":"nodemon index.js",
+
+  npm run start:dev
+
+  
+
+- TypeScript Development Tasks
+
+npm install --save-dev nodemon
+
+"prestart:dev": "npm run tsc -- --watch",
+
+  "start:dev": "nodemon index.js",
+
+- Automating TypeScript Development Tasks
+
+https://www.npmjs.com/package/npm-run-all
+
+npm install npm-run-all --save-dev
+
+"scripts": {
+
+  "tsc": "tsc",
+
+  "prestart": "echo The prestart script is running && npm run tsc",
+
+  "start": "node index.js",
+
+  "build:watch": "npm run tsc -- --watch",
+
+  "start:dev": "nodemon index.js",
+
+  "start:dev:watch":"npm-run-all tsc --parallel start:dev build:watch",
+
+  "test": "echo \"Error: no test specified\" && exit 1"
+
+npm run start:dev:watch
+
+- Bonus TypeScript Development Tasks
+
+https://www.npmjs.com/package/ts-node-dev
+
+"start:tsdev":"ts-node-dev index.ts",
+
+npm run start:tsdev
+
+
+
 
 
 **5-Scripting for Testing**
